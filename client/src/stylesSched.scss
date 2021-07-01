@@ -1,0 +1,35 @@
+$base-color: #ff0000;
+$blue-color: #22ac11;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $base-color;
+}
+
+.MuiTable-root {
+    color : red ; 
+}
+
+.ae-zone {
+    background-color: #e57373;
+    color: rgb(141, 0, 0);
+}
+
+$table-header-font-weight:      400;
+$table-header-font-color:       #757575;
+
+$table-cell-padding:            1.6rem;
+$table-condensed-cell-padding:  $table-cell-padding/2;
+
+
+$table-bg:                      rgb(177, 0, 0);
+$table-bg-accent:               #000000;
+$table-bg-hover:                rgba(0,0,0,.12);
+$table-bg-active:               $table-bg-hover;
+$table-border-color:            #bd0000;
