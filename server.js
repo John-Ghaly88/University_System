@@ -18,13 +18,19 @@ app.use(express.json());
 const auth = require('./routes/api/users');
 app.use('./routes/api/auth', auth)
 
-const db = require('./config/keys').mongoURI;
-
-mongoose
-    .connect(db)
-    .then(()=> console.log("mongoDB connected"))
-    .catch(err => console.log(err));
-
+//DB connection
+async function main() {
+    var uri = "mongodb://admin:swsec@cluster0-shard-00-00.1zdiw.mongodb.net:27017,cluster0-shard-00-01.1zdiw.mongodb.net:27017,cluster0-shard-00-02.1zdiw.mongodb.net:27017/swsec?ssl=true&replicaSet=atlas-slll6s-shard-0&authSource=admin&retryWrites=true&w=majority"
+    await mongoose
+      .connect(process.env.MONGODB_URI || uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
+      .then((config) => {
+        console.log("connected to DB successfully");
+      });
+  }
+  main().catch(console.error);
 
 app.use('/api/users', users);
 app.use('/api/grades', grades);
