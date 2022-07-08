@@ -10,7 +10,6 @@ const schedules = require('./routes/api/schedules');
 const tutGroups = require('./routes/api/tutGroups');
 const courses = require('./routes/api/courses');
 
-
 const app =express();
 app.use(cors());
 app.use(express.json());
@@ -38,7 +37,6 @@ app.use('/api/applicants', applicants);
 app.use('/api/schedules', schedules);
 app.use('/api/tutGroups', tutGroups);
 app.use('/api/courses', courses);
-
 
 const port = process.env.PORT || 5000;
 
